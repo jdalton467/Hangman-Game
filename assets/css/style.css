@@ -10,7 +10,9 @@
 #gamebox{
 	border: black dotted 2px;
 	background-color: yellow;
-	height: 500px;
+	height: 700px;
+	text-align: center;
+	font-size: 24px;
 
 }
 
@@ -24,6 +26,17 @@
 #guess-count{
     border: black dotted 2px;
 	background-color: yellow;
-	height: 80px;
+	height: 120px;
 	margin-top: 80px;
+	text-align: center;
+	font-size: 24px;
+}
+
+#guessed-letters{
+	 border: black dotted 2px;
+	background-color: yellow;
+	height: 120px;
+	margin-top: 80px;
+	text-align: center;
+	font-size: 24px;
 }
