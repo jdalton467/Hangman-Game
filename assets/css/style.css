@@ -1,0 +1,29 @@
+
+#navbar{
+	background-color: #4aaaa5;
+	text-align: center;
+	border:dotted black 2px;
+
+}
+
+
+#gamebox{
+	border: black dotted 2px;
+	background-color: yellow;
+	height: 500px;
+
+}
+
+#guess-array{
+	border: black dotted 2px;
+	background-color: yellow;
+	height: 80px;
+	margin-top: 200px;
+}
+
+#guess-count{
+    border: black dotted 2px;
+	background-color: yellow;
+	height: 80px;
+	margin-top: 80px;
+}
