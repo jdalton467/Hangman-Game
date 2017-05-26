@@ -6,7 +6,7 @@
 			var underScore = []; // underscores to take the place of the hidden word
 			// prompt("press any key to begin!");
 			
-			var guessLeft = 11; // player starts off with 10 guesses
+			var guessLeft = 10; // player starts off with 10 guesses
 			var roundWord = animals[Math.floor(Math.random()*animals.length)];
 				console.log(roundWord);// randomly picks word from array for a particular round to be     played and stores it in a variable called roundWord
 			
