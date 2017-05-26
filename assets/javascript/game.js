@@ -6,8 +6,6 @@
 			var underScore = []; // underscores to take the place of the hidden word
 			// prompt("press any key to begin!");
 			
-			var guessLeft = 10; // player starts off with 10 guesses
-			document.getElementById("guess-count").innerHTML = guessLeft;
 			var roundWord = animals[Math.floor(Math.random()*animals.length)];
 				console.log(roundWord);// randomly picks word from array for a particular round to be     played and stores it in a variable called roundWord
 			
@@ -17,7 +15,8 @@
 				underScore.push("_");
 				document.getElementById("guess-array").innerHTML = underScore;
 			}
-			console.log(underScore);
+			var guessLeft = 10; // player starts off with 10 guesses
+			document.getElementById("guess-count").innerHTML = guessLeft;
 			document.onkeyup = function(event){
 
 				var letterGuess = event.key; //declares a user event in which a user presses key, input stored in variable called letterGuess
