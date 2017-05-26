@@ -1,6 +1,6 @@
 
 
-            var animals = ["gazelle", "gorilla", "cheetah", "jaguar", "panther", "lion", "crocodile", "rhino", "zebra", "hippo"]; //declare an array of words for the game
+      var animals = ["gazelle", "gorilla", "cheetah", "jaguar", "panther", "lion", "crocodile", "rhino", "zebra", "hippo"]; //declare an array of words for the game
 			var roundWordletters = []; // declare empty array of letters to be stored from random word
 			var usedLetters = []; // empty array used to store letters that have been used
 			var underScore = []; // underscores to take the place of the hidden word
@@ -14,6 +14,7 @@
 				roundWordletters.push(roundWord.charAt(i)); //converts the string roundWord into an array of individual characters
 				// console.log(roundWordletters[i]);
 				underScore.push("_");
+				document.getElementById("guess-array").innerHTML = underScore;
 			}
 			console.log(underScore);
 			document.onkeyup = function(event){
