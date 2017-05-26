@@ -7,6 +7,7 @@
 			// prompt("press any key to begin!");
 			
 			var guessLeft = 10; // player starts off with 10 guesses
+			document.getElementById("guess-count").innerHTML = guessLeft;
 			var roundWord = animals[Math.floor(Math.random()*animals.length)];
 				console.log(roundWord);// randomly picks word from array for a particular round to be     played and stores it in a variable called roundWord
 			
