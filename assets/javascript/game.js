@@ -20,7 +20,7 @@
 
 				var letterGuess = event.key; //declares a user event in which a user presses key, input stored in variable called letterGuess
 				// usedLetters.push(letterGuess);
-				alert(letterGuess);//returns back to user's guess
+				// alert(letterGuess);//returns back to user's guess
 					
 				// while(guessLeft > 0){
 						for(j = 0; j <roundWordletters.length; j++){ //tests whether letterGuess matched any
@@ -55,7 +55,6 @@
 							}
 	    
 					document.getElementById("guess-array").innerHTML = underScore;
-					
 					document.getElementById("guess-count").innerHTML = guessLeft;
 					document.getElementById("guessed-letters").innerHTML = usedLetters;
 	    };
