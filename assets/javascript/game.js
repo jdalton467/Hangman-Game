@@ -19,6 +19,12 @@
 			}
 			var guessLeft = 10; // player starts off with 10 guesses
 			document.getElementById("guess-count").innerHTML = guessLeft;
+			
+
+
+
+
+
 			document.onkeyup = function(event){
 
 				var letterGuess = event.key; //declares a user event in which a user presses key, input stored in variable called letterGuess
@@ -37,22 +43,40 @@
 								// document.getElementById("guess-array").innerHTML = underScore;
 								document.getElementById("guess-array").innerHTML = letterGuess;
 								
-							}
+							 }
 							
-							}
+						}
 							
 						
-							if(letterGuess){
+					if(letterGuess){
 								usedLetters.push(letterGuess);
 								guessLeft--;
 							}
 					
 						
-						if(guessLeft == 0 && underScore.indexOf("_") > -1){
+					if(guessLeft == 0 && underScore.indexOf("_") > -1){
 							document.getElementById("winlose").innerHTML = lose;
+
+							for(j = 0; j < roundWordletters.length[j]; j++){
+							document.getElementById("guess-array").innerHTML = roundWordletters[j];
 						}
-						if(underScore.indexOf("_")==-1){
-							document.getElementById("winlose").innerHTML = win;	
+							   document.onkeyup =function(event) {
+                    return false;
+               }
+							
+						}
+
+
+
+
+
+					if(underScore.indexOf("_")==-1){
+							document.getElementById("winlose").innerHTML = win;
+
+							   document.onkeyup =function(event) {
+                    return false;
+                  }
+							
 						}
 	    
 					document.getElementById("guess-array").innerHTML = underScore;
@@ -60,3 +84,4 @@
 					document.getElementById("guessed-letters").innerHTML = usedLetters;
 	   
 };
+
