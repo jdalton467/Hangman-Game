@@ -55,17 +55,15 @@
 					
 						
 					if(guessLeft == 0 && underScore.indexOf("_") > -1){
-							document.getElementById("winlose").innerHTML = lose;
-
-							for(j = 0; j < roundWordletters.length[j]; j++){
-							document.getElementById("guess-array").innerHTML = roundWordletters[j];
-						}
-							   document.onkeyup =function(event) {
+							 document.getElementById("winlose").innerHTML = lose;
+							 alert(roundWord);
+							 document.onkeyup =function(event) {
                     return false;
-               }
-							
-						}
+                    }
+              }
+             
 
+            	
 
 
 
@@ -84,4 +82,5 @@
 					document.getElementById("guessed-letters").innerHTML = usedLetters;
 	   
 };
+
 
