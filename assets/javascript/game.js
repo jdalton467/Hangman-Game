@@ -8,6 +8,8 @@
 			
 			var roundWord = animals[Math.floor(Math.random()*animals.length)];
 				console.log(roundWord);// randomly picks word from array for a particular round to be     played and stores it in a variable called roundWord
+			var win = "you win!";
+			var lose = "you lose";
 			
 			for(i = 0; i < roundWord.length; i++){
 				roundWordletters.push(roundWord.charAt(i)); //converts the string roundWord into an array of individual characters
@@ -39,23 +41,22 @@
 							
 							}
 							
+						
 							if(letterGuess){
 								usedLetters.push(letterGuess);
-								console.log("=============")
-								console.log(usedLetters);
 								guessLeft--;
-								console.log("you have" + " " + guessLeft + " " + "guesses left");
 							}
+					
 						
 						if(guessLeft == 0 && underScore.indexOf("_") > -1){
-						alert("you lose!!");
+							document.getElementById("winlose").innerHTML = lose;
 						}
 						if(underScore.indexOf("_")==-1){
-								console.log(roundWord);
-								alert("you win!!");
-							}
+							document.getElementById("winlose").innerHTML = win;	
+						}
 	    
 					document.getElementById("guess-array").innerHTML = underScore;
 					document.getElementById("guess-count").innerHTML = guessLeft;
 					document.getElementById("guessed-letters").innerHTML = usedLetters;
-	    };
+	   
+};

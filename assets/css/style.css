@@ -16,18 +16,28 @@
 
 }
 
+#winlose{
+    /*border: black dotted 2px;*/
+	background-color: yellow;
+	height: 80px;
+	margin-top: 100px;
+
+}
+
+
+
 #guess-array{
 	border: black dotted 2px;
 	background-color: yellow;
 	height: 80px;
-	margin-top: 200px;
+	margin-top: 20px;
 }
 
 #guess-count{
     border: black dotted 2px;
 	background-color: yellow;
 	height: 120px;
-	margin-top: 80px;
+	margin-top: 20px;
 	text-align: center;
 	font-size: 24px;
 }
@@ -36,7 +46,7 @@
 	 border: black dotted 2px;
 	background-color: yellow;
 	height: 120px;
-	margin-top: 80px;
+	margin-top: 20px;
 	text-align: center;
 	font-size: 24px;
 }
