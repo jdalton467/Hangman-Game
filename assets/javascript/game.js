@@ -1,6 +1,6 @@
 
 
-      var animals = ["gazelle", "gorilla", "cheetah", "jaguar", "panther", "lion", "crocodile", "rhino", "zebra", "hippo"]; //declare an array of words for the game
+      var animals = ["gazelle", "gorilla", "cheetah", "jaguar", "panther", "lion", "crocodile", "rhino", "zebra", "hippo", "rattlesnake", "stingray"]; //declare an array of words for the game
 			var roundWordletters = []; // declare empty array of letters to be stored from random word
 			var usedLetters = []; // empty array used to store letters that have been used
 			var underScore = []; // underscores to take the place of the hidden word
@@ -17,7 +17,7 @@
 				underScore.push("_");
 				document.getElementById("guess-array").innerHTML = underScore;
 			}
-			var guessLeft = 10; // player starts off with 10 guesses
+			var guessLeft = 15; // player starts off with 10 guesses
 			document.getElementById("guess-count").innerHTML = guessLeft;
 			
 
@@ -54,13 +54,20 @@
 							}
 					
 						
-					if(guessLeft == 0 && underScore.indexOf("_") > -1){
-							 document.getElementById("winlose").innerHTML = lose;
-							 alert(roundWord);
-							 document.onkeyup =function(event) {
+					if(guessLeft == 0 && underScore.indexOf("_") > -1){			 
+						 document.getElementById("winlose").innerHTML = lose;
+							document.onkeyup =function(event) {
                     return false;
-                    }
-              }
+                   }
+        win = lose;
+        for(i =0; i < roundWordletters.length; i++){
+        	underScore.splice(i, 1,roundWordletters[i]);
+        	document.getElementById("guess-array").innerHTML = roundWordletters;
+
+        }
+							}
+						
+              
              
 
             	
@@ -80,6 +87,7 @@
 					document.getElementById("guess-array").innerHTML = underScore;
 					document.getElementById("guess-count").innerHTML = guessLeft;
 					document.getElementById("guessed-letters").innerHTML = usedLetters;
+
 	   
 };
 
