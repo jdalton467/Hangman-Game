@@ -17,7 +17,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<img src="images/lambo.jpg">
+					<div id="usedwords"></div>
 					<div id="letter-box"></div>
+					<div id="guess-count"></div>
 				</div>
 			</div>
 			
@@ -25,7 +27,13 @@
 		</div>
 		
 		<script type="text/javascript">
+
+		var pickedWord;
+		var guess = 10;
 		function start(){
+		guess = 10;
+		document.getElementById("guess-count").innerHTML = " ";
+		document.getElementById("guess-count").append(guess);
 			document.getElementById("letter-box").innerHTML = "";
 		var words = ['helicopter', 'spacex', 'the terminator', 'lego batman', 'the force awakens'];
 			//function that is immediatley invoked that takes an array and picks out a word
@@ -34,14 +42,21 @@
 			
 		}
 
-		var pickedWord = wordPick(words);
+		pickedWord = wordPick(words);
 		console.log(pickedWord)
 
-		function underScore(picked){
+		function underScore(picked, correct){
 			for(var i = 0; i < picked.length; i++){
 				if(picked[i] != " "){
 					// console.log("space")
-					document.getElementById("letter-box").append("_ "); //append underscore 
+					var newDiv = document.createElement('div');
+					newDiv.append("_ ");
+					newDiv.setAttribute("class", picked[i]);
+					newDiv.classList.add("div");
+					document.getElementById("letter-box").append(newDiv); //append underscore 
+
+				}else if(correct){
+					console.log(correct);
 				}else{
 					var foo = document.createTextNode("\u00A0"); //if the phrase has a space append a whitespace in place of underscore
 					var bar = document.createTextNode("\u00A0");
@@ -55,7 +70,26 @@
 
 		start(); //start the game 
 
-			// console.log(words);
+		document.onkeyup = function(e){
+			console.log(e.key);
+			console.log(pickedWord);
+			if(pickedWord.indexOf(e.key) !== -1 && e.key !== " "){
+				console.log("right guess");
+				// var correct = true;
+				// document.getElementsByClassName(e.key)
+				for(var i = 0; i<document.getElementsByClassName(e.key).length; i++){
+				document.getElementsByClassName(e.key)[i].innerHTML = e.key;
+			}
+			}else if(pickedWord.indexOf(e.key) == -1){
+				console.log("wrong guess");
+				guess -= 1;
+				document.getElementById("guess-count").innerHTML = " ";
+				document.getElementById("guess-count").append(guess);
+				console.log(guess)
+			}else{
+				alert("space is not answer");
+			}
+		}
 		</script>
 	</body>
 </html>
