@@ -1,61 +1,58 @@
 
 
 
-#navbar{
-	background-color: #4aaaa5;
-	text-align: center;
-	border:dotted black 2px;
-	font-family: Jurassic Park;
-}
-
-
-#gamebox{
-	border: black dotted 2px;
-	background-color: yellow;
-	height: 700px;
-	text-align: center;
-	font-size: 35px;
-	font-family: Jurassic Park;
+body{
+	/*position: relative;*/
+	/*background-image: url('../images/lambo.jpg');*/
+	/*overflow:scroll;*/
+	/*width: 1200px;*/
 
 }
 
-#winlose{
-    border: black dotted 2px;
-	background-color: yellow;
+.navbar{
+	/*position:absolu;*/
+
+	opacity: .8;
+	width: 100%;
+	text-align: center;
 	height: 80px;
-	margin-top: 100px;
-	font-family: Jurassic Park;
-	font-size:35px;
+	 display:inline-block;
+    float:none;
+}
 
+#reset{
+	opacity: 1 !important;
+}
+
+
+.navbar > h2{
+	margin: auto;
 }
 
 
 
-#guess-array{
-	border: black dotted 2px;
-	background-color: yellow;
-	height: 80px;
-	margin-top: 20px;
-	font-family: Jurassic Park;
-	font-size: 35px;
+.container-fluid{
+	
+	position: absolute;
+	width: 100%;
+	height:100%;
+	
+	background-image: url('../images/lambo.jpg');
+	overflow: auto;
+	
 }
 
-#guess-count{
-    border: black dotted 2px;
-	background-color: yellow;
-	height: 120px;
-	margin-top: 20px;
+#letter-box{
+	height:75px;
+	width: 500px;
+	border: red solid 2px;
+	color: black;
+	position: absolute;
+	left: 35%;
+	top: 200px;
+	background-color: white;
 	text-align: center;
-	font-size: 35px;
-	font-family: Jurassic Park;
+	/*padding-top: 10px;*/
+	font-size: 32px;
 }
 
-#guessed-letters{
-	 border: black dotted 2px;
-	background-color: yellow;
-	height: 120px;
-	margin-top: 20px;
-	text-align: center;
-	font-size: 35px;
-	font-family: Jurassic Park;
-}
