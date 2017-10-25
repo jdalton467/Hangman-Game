@@ -30,12 +30,15 @@
 
 		var pickedWord;
 		var guess = 10;
+		var usedletters = [];
 		function start(){
 		guess = 10;
+		usedletters = [];
+		document.getElementById("usedwords").innerHTML = " ";
 		document.getElementById("guess-count").innerHTML = " ";
 		document.getElementById("guess-count").append(guess);
 			document.getElementById("letter-box").innerHTML = "";
-		var words = ['helicopter', 'spacex', 'the terminator', 'lego batman', 'the force awakens'];
+		var words = ['helicopter', 'spacex', 'the terminator', 'lego batman', 'the force awakens', 'the bird is the word', 'alligators are bad animals'];
 			//function that is immediatley invoked that takes an array and picks out a word
 		function wordPick(words){
 			return words[Math.floor(Math.random()*words.length)];
@@ -54,10 +57,7 @@
 					newDiv.setAttribute("class", picked[i]);
 					newDiv.classList.add("div");
 					document.getElementById("letter-box").append(newDiv); //append underscore 
-
-				}else if(correct){
-					console.log(correct);
-				}else{
+					}else{
 					var foo = document.createTextNode("\u00A0"); //if the phrase has a space append a whitespace in place of underscore
 					var bar = document.createTextNode("\u00A0");
 					document.getElementById("letter-box").append(foo);
@@ -74,20 +74,27 @@
 			console.log(e.key);
 			console.log(pickedWord);
 			if(pickedWord.indexOf(e.key) !== -1 && e.key !== " "){
-				console.log("right guess");
-				// var correct = true;
-				// document.getElementsByClassName(e.key)
+				if(usedletters.indexOf(e.key) != -1){
+					alert("you already picked that letter");
+				}else{
+				usedletters.push(e.key);
+				console.log(usedletters)
+				document.getElementById("usedwords").append(e.key + " ");
 				for(var i = 0; i<document.getElementsByClassName(e.key).length; i++){
 				document.getElementsByClassName(e.key)[i].innerHTML = e.key;
-			}
+				}
+			  }
 			}else if(pickedWord.indexOf(e.key) == -1){
 				console.log("wrong guess");
 				guess -= 1;
 				document.getElementById("guess-count").innerHTML = " ";
 				document.getElementById("guess-count").append(guess);
-				console.log(guess)
+				if(guess === 0){
+					alert("you lose");
+					start();
+				}
 			}else{
-				alert("space is not answer");
+				alert("space is not an answer");
 			}
 		}
 		</script>
