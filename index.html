@@ -33,7 +33,8 @@
 		var usedletters = [];
 		function start(){
 		guess = 10;
-		usedletters = [];
+		roundletters = []; //array holding the round word letters excluding any spaces
+		usedletters = []; //array holding the usedletters
 		document.getElementById("usedwords").innerHTML = " ";
 		document.getElementById("guess-count").innerHTML = " ";
 		document.getElementById("guess-count").append(guess);
@@ -51,7 +52,9 @@
 		function underScore(picked, correct){
 			for(var i = 0; i < picked.length; i++){
 				if(picked[i] != " "){
-					// console.log("space")
+					if(picked[i] != " " && roundletters.indexOf(picked[i]) == -1){
+					roundletters.push(picked[i]); //remove duplicate letters
+				    }
 					var newDiv = document.createElement('div');
 					newDiv.append("_ ");
 					newDiv.setAttribute("class", picked[i]);
@@ -64,6 +67,7 @@
 					document.getElementById("letter-box").append(bar);
 				}
 			}
+			console.log("picked Array: " + roundletters);
 		}
 		underScore(pickedWord);
 		};
@@ -83,6 +87,10 @@
 				for(var i = 0; i<document.getElementsByClassName(e.key).length; i++){
 				document.getElementsByClassName(e.key)[i].innerHTML = e.key;
 				}
+				if(usedletters.length == roundletters.length){
+					alert("you win!");
+					setTimeout(start, 3000);
+				}
 			  }
 			}else if(pickedWord.indexOf(e.key) == -1){
 				console.log("wrong guess");
@@ -91,7 +99,7 @@
 				document.getElementById("guess-count").append(guess);
 				if(guess === 0){
 					alert("you lose");
-					start();
+					setTimeout(start, 3000);
 				}
 			}else{
 				alert("space is not an answer");
